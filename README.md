@@ -2,6 +2,8 @@
 
 Um portfólio pessoal, demonstrando informações sobre mim, meus projetos desenvolvido com as linguagens e habilidade utilizadas.
 
+Acesse aqui: https://rykoji.github.io/portifolio/
+
 ## 🚀 Tecnologias
 
 - **React 18** - Biblioteca JavaScript para construção de interfaces
