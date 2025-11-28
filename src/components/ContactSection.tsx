@@ -10,8 +10,8 @@ export function ContactSection() {
     {
       icon: Mail,
       title: t.contact.email,
-      value: 'ryan.taira@hotmail.com',
-      link: 'mailto:ryan.taira@hotmail.com',
+      value: 'ryan_koji@hotmail.com',
+      link: 'mailto:ryan_koji@hotmail.com',
     },
     {
       icon: Phone,
