@@ -1,6 +1,7 @@
 import { ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
 import { useLanguage } from '../contexts/LanguageContext';
+import profileImg from '/public/thumbnails/profile.png';
 
 export function HeroSection() {
   const { t } = useLanguage();
@@ -15,7 +16,7 @@ export function HeroSection() {
         <div className="mb-8">
           <div className="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-2xl border-4 border-white/30">
             <img 
-              src="/thumbnails/profile.png" 
+              src={profileImg} 
               alt="Ryan Taira" 
               className="w-full h-full object-cover object-center"
               style={{ objectPosition: 'center 20%' }}

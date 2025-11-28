@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import { ExternalLink, Github } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useLanguage } from '../contexts/LanguageContext';
+import pokemonRandomizerImg from '/public/thumbnails/pokemon-randomizer.png';
 
 export function ProjectsSection() {
   const { t } = useLanguage();
@@ -11,7 +12,7 @@ export function ProjectsSection() {
     {
       title: t.projects.items[0].title,
       description: t.projects.items[0].description,
-      image: '/thumbnails/pokemon-randomizer.png',
+      image: pokemonRandomizerImg,
       tags: ['Vue.js', 'Pokemon API', 'CSS', 'Javascript'],
       github: 'https://github.com/rykoji/pokemon_randomizer',
       demo: 'https://rykoji.github.io/pokemon_randomizer/',

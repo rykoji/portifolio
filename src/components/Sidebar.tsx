@@ -1,6 +1,7 @@
 import { Home, User, Briefcase, Code, Award, Mail, Menu, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import profileImg from '/public/thumbnails/profile.png';
 
 interface SidebarProps {
   activeSection: string;
@@ -82,7 +83,7 @@ export function Sidebar({ activeSection, setActiveSection, isCollapsed, setIsCol
           {isCollapsed ? (
             <div className="hidden lg:flex w-12 h-12 mx-auto rounded-full overflow-hidden border-2 border-blue-600 mb-2">
               <img 
-                src="/thumbnails/profile.png" 
+                src={profileImg} 
                 alt={t.sidebar.title}
                 className="w-full h-full object-cover"
               />
@@ -91,7 +92,7 @@ export function Sidebar({ activeSection, setActiveSection, isCollapsed, setIsCol
             <>
               <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-4 border-blue-600 mb-4 shadow-lg">
                 <img 
-                  src="/thumbnails/profile.png" 
+                  src={profileImg} 
                   alt={t.sidebar.title}
                   className="w-full h-full object-cover"
                 />
