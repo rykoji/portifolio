@@ -4,6 +4,7 @@ import { ExternalLink, Github } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useLanguage } from '../contexts/LanguageContext';
 import pokemonRandomizerImg from '/public/thumbnails/pokemon-randomizer.png';
+import tacticalCliboardImg from '/public/thumbnails/clipboard.png';
 
 export function ProjectsSection() {
   const { t } = useLanguage();
@@ -13,9 +14,17 @@ export function ProjectsSection() {
       title: t.projects.items[0].title,
       description: t.projects.items[0].description,
       image: pokemonRandomizerImg,
-      tags: ['Vue.js', 'Pokemon API', 'CSS', 'Javascript'],
+      tags: ['Vue.js ', 'Pokemon API', 'CSS', 'Javascript'],
       github: 'https://github.com/rykoji/pokemon_randomizer',
       demo: 'https://rykoji.github.io/pokemon_randomizer/',
+    },
+    {
+      title: t.projects.items[1].title,
+      description: t.projects.items[1].description,
+      image: tacticalCliboardImg,
+      tags: ['Vue.js', 'Tailwind CSS 4.0', 'Javascript'],
+      github: 'https://github.com/rykoji/tacticalClipboard/',
+      demo: 'https://rykoji.github.io/tacticalClipboard/',
     },
   ];
 

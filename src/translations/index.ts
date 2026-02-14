@@ -50,6 +50,10 @@ export const translations = {
           title: 'Pokemon Randomizer',
           description: 'Um projeto utilizando a Pokémon API para gerar um Pokémon aleatório ou até mesmo uma equipe completa, dependendo de qual versão do jogo você escolher.',
         },
+        {
+          title: 'Tactical Clipboard',
+          description: 'Uma ferramenta de prancheta tática para organizar e planejar estratégias do esporte selecionado.',
+        },
       ],
       codeButton: 'Código',
       demoButton: 'Demo',
@@ -150,6 +154,10 @@ export const translations = {
         {
           title: 'Pokemon Randomizer',
           description: 'A project using the Pokémon API to generate a random Pokémon or even a complete team, depending on which game version you choose.',
+        },
+        {
+          title: 'Tactical Clipboard',
+          description: 'A tactical clipboard tool to organize and manage your texts and snippets efficiently.',
         },
       ],
       codeButton: 'Code',
