@@ -1,10 +1,13 @@
 import { Card } from './ui/card';
 import { Code2, Database, Wrench } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { SectionTitle } from './SectionTitle';
 
 export function SkillsSection() {
   const { t } = useLanguage();
-  
+  const { ref, isVisible } = useScrollAnimation();
+
   const skillCategories = [
     {
       title: t.skills.categories.frontend,
@@ -45,38 +48,42 @@ export function SkillsSection() {
 
   return (
     <section className="flex items-center justify-center px-6 lg:px-20 py-20 bg-slate-50">
-      <div className="max-w-6xl w-full">
-        <h2 className="text-3xl font-bold text-slate-900 mb-4">{t.skills.title}</h2>
-        <p className="text-slate-600 mb-12 max-w-2xl">
-          {t.skills.description}
-        </p>
+      <div
+        ref={ref}
+        className={`max-w-6xl w-full transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      >
+        <SectionTitle title={t.skills.title} description={t.skills.description} />
 
         <div className="grid md:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => {
             const CategoryIcon = category.icon;
             return (
-              <Card key={index} className="p-6">
+              <Card
+                key={index}
+                className="p-6 border border-slate-100 hover:shadow-lg transition-all duration-300"
+                style={isVisible ? { transitionDelay: `${index * 100}ms` } : {}}
+              >
                 <div className="flex items-center gap-3 mb-6">
-                  <CategoryIcon className="w-6 h-6 text-blue-600" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-sm">
+                    <CategoryIcon className="w-5 h-5 text-white" />
+                  </div>
                   <h3 className="text-slate-900">{category.title}</h3>
                 </div>
-                
-                <div className="grid grid-cols-2 gap-4">
-                  {category.skills.map((skill, skillIndex) => {
-                    return (
-                      <div 
-                        key={skillIndex}
-                        className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-white hover:bg-slate-50 transition-colors border border-slate-200"
-                      >
-                        {skill.imgSrc ? (
-                          <img src={skill.imgSrc} alt={skill.name} className="w-12 h-12" />
-                        ) : (
-                          <i className={`${skill.iconClass} text-5xl`}></i>
-                        )}
-                        <span className="text-slate-700 text-center text-xs font-medium">{skill.name}</span>
-                      </div>
-                    );
-                  })}
+
+                <div className="grid grid-cols-2 gap-3">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div
+                      key={skillIndex}
+                      className="flex flex-col items-center gap-2 p-3 rounded-xl bg-white hover:bg-blue-50 hover:border-blue-100 transition-colors border border-slate-100 cursor-default"
+                    >
+                      {skill.imgSrc ? (
+                        <img src={skill.imgSrc} alt={skill.name} className="w-10 h-10" />
+                      ) : (
+                        <i className={`${skill.iconClass} text-4xl`} />
+                      )}
+                      <span className="text-slate-700 text-center text-xs font-medium leading-tight">{skill.name}</span>
+                    </div>
+                  ))}
                 </div>
               </Card>
             );
@@ -86,4 +93,3 @@ export function SkillsSection() {
     </section>
   );
 }
-
