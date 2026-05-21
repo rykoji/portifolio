@@ -55,7 +55,7 @@ export const translations = {
           description: 'Uma ferramenta de prancheta tática para organizar e planejar estratégias do esporte selecionado.',
         },
         {
-          title: 'EduSystem',
+          title: 'SystemEdu',
           description: 'Sistema de gerenciamento escolar com dashboard, controle de alunos, matérias e lançamento de notas, com autenticação via Supabase.',
         },
       ],
@@ -164,7 +164,7 @@ export const translations = {
           description: 'A tactical clipboard tool to organize and manage your texts and snippets efficiently.',
         },
         {
-          title: 'EduSystem',
+          title: 'SystemEdu',
           description: 'School management system with dashboard, student and subject control, and grade tracking, with authentication via Supabase.',
         },
       ],
