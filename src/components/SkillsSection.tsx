@@ -28,6 +28,7 @@ export function SkillsSection() {
         { name: 'ASP.NET Core', iconClass: 'devicon-dotnetcore-plain colored' },
         { name: 'Golang', iconClass: 'devicon-go-original-wordmark colored' },
         { name: 'SQL', iconClass: 'devicon-azuresqldatabase-plain colored' },
+        { name: 'Supabase', iconClass: 'devicon-supabase-plain colored' },
       ],
     },
     {

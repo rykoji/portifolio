@@ -54,6 +54,10 @@ export const translations = {
           title: 'Tactical Clipboard',
           description: 'Uma ferramenta de prancheta tática para organizar e planejar estratégias do esporte selecionado.',
         },
+        {
+          title: 'EduSystem',
+          description: 'Sistema de gerenciamento escolar com dashboard, controle de alunos, matérias e lançamento de notas, com autenticação via Supabase.',
+        },
       ],
       codeButton: 'Código',
       demoButton: 'Demo',
@@ -158,6 +162,10 @@ export const translations = {
         {
           title: 'Tactical Clipboard',
           description: 'A tactical clipboard tool to organize and manage your texts and snippets efficiently.',
+        },
+        {
+          title: 'EduSystem',
+          description: 'School management system with dashboard, student and subject control, and grade tracking, with authentication via Supabase.',
         },
       ],
       codeButton: 'Code',

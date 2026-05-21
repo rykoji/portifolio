@@ -5,10 +5,11 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useLanguage } from '../contexts/LanguageContext';
 import pokemonRandomizerImg from '/public/thumbnails/pokemon-randomizer.png';
 import tacticalCliboardImg from '/public/thumbnails/clipboard.png';
+import eduSystemImg from '/public/thumbnails/schoolCrud.png';
 
 export function ProjectsSection() {
   const { t } = useLanguage();
-  
+
   const projects = [
     {
       title: t.projects.items[0].title,
@@ -25,6 +26,14 @@ export function ProjectsSection() {
       tags: ['Vue.js', 'Tailwind CSS 4.0', 'Javascript'],
       github: 'https://github.com/rykoji/tacticalClipboard/',
       demo: 'https://rykoji.github.io/tacticalClipboard/',
+    },
+    {
+      title: t.projects.items[2].title,
+      description: t.projects.items[2].description,
+      image: eduSystemImg,
+      tags: ['React', 'TypeScript', 'Supabase', 'TanStack Table', 'ECharts'],
+      github: 'https://github.com/rykoji/SchoolCrud',
+      demo: 'https://school-crud-wine.vercel.app/',
     },
   ];
 
