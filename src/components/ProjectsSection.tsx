@@ -33,7 +33,7 @@ export function ProjectsSection() {
       image: eduSystemImg,
       tags: ['React', 'TypeScript', 'Supabase', 'TanStack Table', 'ECharts'],
       github: 'https://github.com/rykoji/SchoolCrud',
-      demo: 'https://school-crud-wine.vercel.app/',
+      demo: 'https://systemedu.vercel.app/',
     },
   ];
 
