@@ -48,20 +48,24 @@ export function SkillsSection() {
 
   return (
     <section className="flex items-center justify-center px-6 lg:px-20 py-20 bg-slate-50">
-      <div
-        ref={ref}
-        className={`max-w-6xl w-full transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-      >
+      <div ref={ref} className="max-w-6xl w-full">
         <SectionTitle title={t.skills.title} description={t.skills.description} />
 
         <div className="grid md:grid-cols-3 gap-8">
-          {skillCategories.map((category, index) => {
+          {skillCategories.map((category, catIndex) => {
             const CategoryIcon = category.icon;
             return (
               <Card
-                key={index}
-                className="p-6 border border-slate-100 hover:shadow-lg transition-all duration-300"
-                style={isVisible ? { transitionDelay: `${index * 100}ms` } : {}}
+                key={catIndex}
+                className="p-6 border border-slate-100 hover:shadow-lg"
+                style={
+                  isVisible
+                    ? {
+                        animation: `fadeInUp 0.5s ease both`,
+                        animationDelay: `${catIndex * 120}ms`,
+                      }
+                    : { opacity: 0 }
+                }
               >
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-sm">
@@ -74,14 +78,30 @@ export function SkillsSection() {
                   {category.skills.map((skill, skillIndex) => (
                     <div
                       key={skillIndex}
-                      className="flex flex-col items-center gap-2 p-3 rounded-xl bg-white hover:bg-blue-50 hover:border-blue-100 transition-colors border border-slate-100 cursor-default"
+                      className="flex flex-col items-center gap-2 p-3 rounded-xl bg-white hover:bg-blue-50 hover:border-blue-100 border border-slate-100 cursor-default group"
+                      style={
+                        isVisible
+                          ? {
+                              animation: `fadeInUpSm 0.35s ease both`,
+                              animationDelay: `${catIndex * 120 + skillIndex * 55 + 200}ms`,
+                            }
+                          : { opacity: 0 }
+                      }
                     >
                       {skill.imgSrc ? (
-                        <img src={skill.imgSrc} alt={skill.name} className="w-10 h-10" />
+                        <img
+                          src={skill.imgSrc}
+                          alt={skill.name}
+                          className="w-10 h-10 group-hover:scale-110 transition-transform duration-200"
+                        />
                       ) : (
-                        <i className={`${skill.iconClass} text-4xl`} />
+                        <i
+                          className={`${skill.iconClass} text-4xl inline-block group-hover:scale-110 transition-transform duration-200`}
+                        />
                       )}
-                      <span className="text-slate-700 text-center text-xs font-medium leading-tight">{skill.name}</span>
+                      <span className="text-slate-700 text-center text-xs font-medium leading-tight">
+                        {skill.name}
+                      </span>
                     </div>
                   ))}
                 </div>

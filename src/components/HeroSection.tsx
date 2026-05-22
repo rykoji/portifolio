@@ -1,10 +1,12 @@
 import { ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useTypewriter } from '../hooks/useTypewriter';
 import profileImg from '/public/thumbnails/profile.png';
 
 export function HeroSection() {
   const { t } = useLanguage();
+  const { displayed, done } = useTypewriter(t.sidebar.subtitle, 55, 700);
 
   const scrollToNext = () => {
     document.getElementById('sobre')?.scrollIntoView({ behavior: 'smooth' });
@@ -40,8 +42,12 @@ export function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-300 text-sm mb-6 animate-fade-in"
           style={{ animationDelay: '100ms' }}
         >
-          <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-          {t.sidebar.subtitle}
+          <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse flex-shrink-0" />
+          <span>{displayed}</span>
+          <span
+            className="inline-block w-px h-3.5 bg-blue-300 transition-opacity duration-300"
+            style={{ opacity: done ? 0 : 1 }}
+          />
         </div>
 
         <h1
